@@ -1,0 +1,28 @@
+<div class="content" role="main">
+
+    <!-- Resources -->
+    <h2>Movies Database</h2>
+    <p class="sub-title">Search for any movies and series here!</p>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Search Movie</mat-label>
+        <input matInput (keyup)="onSearch($event)">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Sort By</mat-label>
+        <mat-select matNativeControl [value]="sortByValue" (selectionChange)="onSortValChange($event)">
+            <mat-option value="latestFirst">Latest First</mat-option>
+            <mat-option value="oldestFirst">Oldest First</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="movies-list-block">
+        <div class="card-container">
+            <div class="card" *ngFor="let movie of moviesList" (click)="goToMoviesDetails(movie)">
+                <!-- <img class="movie-poster" src="{{movie.Poster}}" alt=""> -->
+                <span>{{ movie.name }}</span>
+            </div>
+        </div>
+    </div>
+</div>

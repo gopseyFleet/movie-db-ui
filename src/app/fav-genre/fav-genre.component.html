@@ -1,0 +1,16 @@
+<mat-grid-list cols="1" rowHeight="500px">
+    <mat-grid-tile class="full-container">
+        <div class="example-container">
+            <span>Add Favourite Genre</span>
+            <form [formGroup]="addFavGenreForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Genres</mat-label>
+                    <mat-select formControlName="genres" multiple>
+                      <mat-option *ngFor="let genre of genresList" [value]="genre">{{genre.genre}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <button mat-icon-button (click)="addFavGenre()">Add Favourite Genre</button>
+            </form>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

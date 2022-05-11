@@ -1,0 +1,25 @@
+<mat-grid-list cols="1" rowHeight="500px">
+    <mat-grid-tile class="full-container">
+        <div class="example-container">
+            <span>Add movies</span>
+            <form [formGroup]="addMovieForm">
+                <mat-form-field appearance="fill" class="width-100">
+                    <mat-label>Movie Name</mat-label>
+                    <input matInput formControlName="movieName" placeholder="KGF 2">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" class="width-100">
+                    <mat-label>Release Date</mat-label>
+                    <input matInput type="date" formControlName="releaseDate">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Genres</mat-label>
+                    <mat-select formControlName="genres" multiple>
+                      <mat-option *ngFor="let genre of genresList" [value]="genre">{{genre.genre}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <button mat-icon-button (click)="addMovie()">Add Movie</button>
+            </form>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

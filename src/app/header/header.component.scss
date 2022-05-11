@@ -1,0 +1,39 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+.spacer {
+    flex: 1;
+}
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+}
+.toolbar a {
+    color: #ffffff;
+}
+a,
+a:visited,
+a:hover {
+    color: #1976d2;
+    text-decoration: none;
+}
+a:hover {
+    color: #125699;
+}
+.home-btn {
+    cursor: pointer;
+    display: contents;
+}
+.menu-titles {
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 16px;
+}

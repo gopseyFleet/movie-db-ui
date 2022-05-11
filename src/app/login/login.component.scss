@@ -1,0 +1,18 @@
+.full-container {
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.example-container {
+    width: 100%;
+    display: contents;
+}
+.login-btn, .register-btn {
+    margin-bottom: 40px;
+    margin-left: 8px;
+}
+.input-ele {
+    margin: 0 8px
+}

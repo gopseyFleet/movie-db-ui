@@ -1,0 +1,42 @@
+<div class="content" role="main">
+    <div *ngIf="movieDetails">
+        <h1 class="movie-title">{{ movieDetails.name }}</h1>
+        <div class="movies-list-block">
+            <div class="card-container">
+                <div class="card" *ngFor="let genres of movieDetails.genres">
+                    <span>{{ genres.genre }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="votes-container">
+            <div class="upvotes-container">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Upvote" (click)="voteMovie(true)">thumb_up
+                </mat-icon><br>
+                <span class="votes-count">{{ movieDetails.upVotes }}</span>
+            </div>
+            <div class="downvotes-container">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Downvote" (click)="voteMovie(false)">thumb_down
+                </mat-icon><br>
+                <span class="votes-count">{{ movieDetails.downVotes }}</span>
+            </div>
+        </div>
+        <div class="add-review" *ngIf="userDetails.accessToken">
+            <form [formGroup]="addReviewForm" class="review-container">
+                <mat-form-field class="" appearance="fill">
+                    <mat-label>Add your review</mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..." formControlName="review"></textarea>
+                </mat-form-field>
+                <button mat-icon-button (click)="addReview()">Add Review</button>
+            </form>
+        </div>
+        <div class="reviews-block">
+            <div class="card-container">
+                <div *ngFor="let reviews of movieDetails.reviews">
+                    <div class="card" *ngIf="reviews.review">
+                        <span>{{ reviews.review }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

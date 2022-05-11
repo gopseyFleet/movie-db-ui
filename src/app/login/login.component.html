@@ -1,0 +1,42 @@
+<div class="full-container">
+    <div class="example-container">
+        <span>Login</span>
+        <form [formGroup]="loginForm">
+            <mat-form-field appearance="fill" class="width-100 input-ele">
+                <mat-label>Email address</mat-label>
+                <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="width-100 input-ele">
+                <mat-label>Enter password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+            <br>
+            <button class="login-btn" mat-icon-button (click)="userLogin()">Login</button>
+        </form>
+    </div>
+    <div class="example-container">
+        <span>Or Sign Up</span>
+        <form [formGroup]="authForm">
+            <mat-form-field appearance="fill" class="width-50 input-ele">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="width-50 ml-2 input-ele">
+                <mat-label>Surname</mat-label>
+                <input matInput formControlName="lastName">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill" class="width-50 input-ele">
+                <mat-label>Email address</mat-label>
+                <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="width-50 ml-2 input-ele">
+                <mat-label>Enter password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+            <br>
+            <button class="register-btn" mat-icon-button (click)="signup()">Signup</button>
+        </form>
+    </div>
+</div>
